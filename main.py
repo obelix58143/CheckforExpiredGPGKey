@@ -30,7 +30,7 @@ alert_days = 5
 #mail_from = "<>"
 #mail_server = "127.0.0.1"
 key_server = 'keyserver.ubuntu.com'
-gpg_location = "/home/nikolas/Dekstop/test"
+gpg_location = "/home/nikolas/Dekstop/test" #ja ich weiß Schreibfehler, ist aber Absicht
 delete_keys = True
 import_keys = True
 simple_output = True
@@ -66,9 +66,9 @@ if import_keys:
         key = line.strip()
         response = response + "Process key %s : " % key
         try:
-            gpg.keyserver = key_server
+            gpg.keyserver = key_server #2 Stunden gesucht bis ich das gemerkt habe
             result = gpg.recv_keys(key)
-            #gpg.keyserver=key_server
+
             if result:
                 response = response + " Imported\n"
             else:
